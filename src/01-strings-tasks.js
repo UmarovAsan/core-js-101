@@ -18,9 +18,7 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
-}
+const concatenateStrings = (value1, value2) => value1 + value2;
 
 
 /**
@@ -34,9 +32,7 @@ function concatenateStrings(/* value1, value2 */) {
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
-}
+const getStringLength = (value) => value.length;
 
 /**
  * Returns the result of string template and given parameters firstName and lastName.
@@ -51,9 +47,7 @@ function getStringLength(/* value */) {
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
-}
+const getStringFromTemplate = (firstName, lastName) => `${'Hello'}, ${firstName} ${lastName}!`;
 
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -65,9 +59,7 @@ function getStringFromTemplate(/* firstName, lastName */) {
  *   'Hello, John Doe!' => 'John Doe'
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
-}
+const extractNameFromTemplate = (value) => value.slice(7, -1);
 
 
 /**
@@ -80,9 +72,7 @@ function extractNameFromTemplate(/* value */) {
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
-}
+const getFirstChar = (value) => value.charAt();
 
 /**
  * Removes a leading and trailing whitespace characters from string.
@@ -95,9 +85,7 @@ function getFirstChar(/* value */) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
-}
+const removeLeadingAndTrailingWhitespaces = (value) => value.trim();
 
 /**
  * Returns a string that repeated the specified number of times.
@@ -110,9 +98,7 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(/* value, count */) {
-  throw new Error('Not implemented');
-}
+const repeatString = (value, count) => value.repeat(count);
 
 /**
  * Remove the first occurrence of string inside another string
@@ -126,9 +112,7 @@ function repeatString(/* value, count */) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
-}
+const removeFirstOccurrences = (str, value) => str.replace(value, '');
 
 /**
  * Remove the first and last angle brackets from tag string
@@ -141,8 +125,11 @@ function removeFirstOccurrences(/* str, value */) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  if (str.startsWith('<') && str.endsWith('>')) {
+    return str.slice(1, -1);
+  }
+  return str;
 }
 
 
